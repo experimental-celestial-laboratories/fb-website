@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
 import bg1 from "../assets/bg1.png";
 import { Image } from 'astro:assets';
+import Box from '../components/Box.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -13,26 +14,22 @@ import { Image } from 'astro:assets';
 	<Header />
 	<Image class="min-w-full -z-10 fixed pt-[8vh]" src={bg1} alt="an image"/>
 	<p class="text-[8vw] leading-[15vw] text-center pt-[42vw] text-[#cccccc] font-bold font-serif pb-[30vw] -z-9 sticky">This<br>is<br>Firebomb.</p>
-	<div class="bg-[#3a3a3a] p-[3vh]"><p class="text-[#cccccc] text-center font-serif text-xl">Welcome to the next great Minecraft Modpack!</p></div>
-	<div class="bg-[#1a1a1a] p-[3vh]">
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
-		<br>this<br>has<br>tons<br>of<br>shitass<br>text
+	<div class="backdrop-blur-xl">
+		<div class="bg-[#3a3a3a] p-[3vh]"><p class="text-[#cccccc] text-center font-serif text-xl">Welcome to the next great Minecraft Modpack!</p></div>
+		<div class="">
+			<div class="p-[3vh] grid gap-[3vh]">
+				<Box link="http://fb.hri7566.info:8124" title="Online Server Map"/>
+				<Box link="https://github.com/khorne101/firebomb-2" title="Modpack Repository"/>
+				<Box link="https://github.com/khorne101/firebomb-2/releases/latest" title="Latest Modpack Release (MultiMC/Prism)"/>
+			</div>
+			<div class="bg-[#1a1a1a] p-[3vh] text-white text-center pb-[9vh]">
+				This is Firebomb, a great collection of Minecraft mods we have beautifully assembled into one of the greatest modpacks to
+				cross this earth. Each mod has been meticulously tested, and balanced in comparison to the rest of the modpack, creating many
+				different ways of acomplishing the same task, and making the pack easier & more fun for all! <br><br><br>
+				This modpack has an official server hosted on some of the most top-of-the-line hardware we can get our hands on, and runs better,
+				and faster than other modded servers. <br><br><br>
+			</div>
+		</div>
 	</div>
 	<Footer />
 </Layout>
