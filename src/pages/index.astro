@@ -2,34 +2,27 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
-import bg1 from "../assets/bg1.png";
 import { Image } from 'astro:assets';
 import Box from '../components/Box.astro';
+import title from "../assets/render.png";
+import { Button } from "../components/ui/button"
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Header />
-	<Image class="min-w-full -z-10 fixed pt-[8vh] lg:-mt-[20vw]" src={bg1} alt="an image"/>
-	<p class="text-[8vw] sm:text-[6vw] lg:text-[5vw] leading-[15vw] sm:leading-[13vw] md:leading-[12vw] lg:leading-[6vw] text-center pt-[42vw] lg:pt-[10vw] text-[#cccccc] font-bold font-serif pb-[30vw] lg:pb-[8vw] -z-9 sticky">This<br>is<br>Firebomb.</p>
-	<div class="backdrop-blur-xl">
-		<div class="bg-[#3a3a3a] p-[3vh]"><p class="text-[#cccccc] text-center font-serif text-xl lg:text-2xl xl:text-4xl">Welcome to the next great Minecraft Modpack!</p></div>
-		<div class="">
-			<div class="p-[3vh] grid gap-[3vh] lg:grid-cols-3 lg:gap-[5vh]">
-				<Box link="http://fb.hri7566.info:8124/#world:-58:0:-57:1500:0:0:0:0:perspective" title="Online Server Map"/>
-				<Box link="https://github.com/khorne101/firebomb-2" title="Modpack Repository"/>
-				<Box link="https://github.com/khorne101/firebomb-2/releases/latest" title="Latest Modpack Release (MultiMC/Prism)"/>
-			</div>
-			<div class="bg-[#1a1a1a] p-[3vh] text-white text-center pb-[9vh] lg:text-lg xl:text-2xl">
-				This is Firebomb, a great collection of Minecraft mods we have beautifully assembled into one of the greatest modpacks to
-				cross this earth. Each mod has been meticulously tested, and balanced in comparison to the rest of the modpack, creating many
-				different ways of acomplishing the same task, and making the pack easier & more fun for all! <br><br><br>
-				This modpack has an official server hosted on top-of-the-line hardware.<br><br><br>
-			</div>
+	<div id="center" class="flex flex-col">
+		<div id="logo" class="flex justify-center pt-10">
+			<Image src={title} alt="Firebomb 2" />
 		</div>
-	</div>
+		<div class="flex justify-center py-10">
+			<a href="https://github.com/experimental-celestial-laboratories/firebomb-2/releases/latest" target="_blank">
+				<Button variant="outline" className="lg:py-10 py-7 backdrop-blur-xl">
+					<p class="lg:text-lg">Download Modpack (Prism Launcher)</p>
+				</Button>
+			</a>
+		</div>
 	</div>
 	<Footer />
 </Layout>
