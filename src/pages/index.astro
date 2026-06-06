@@ -1,63 +1,56 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import Box from '../components/Box.astro';
-import title from "../assets/render.png";
-import { Button } from "../components/ui/button";
+import Discord from "@/assets/discord.svg";
+import Prism from "@/assets/prism.svg";
+
+import Layout from '@/layouts/Layout.astro';
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Discord from "../assets/Discord-Symbol-Light Blurple.svg";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Nav } from "@/components/Nav";
 ---
 
 <Layout title="Home">
-	<div id="center" class="flex flex-col">
-		<div id="logo" class="flex justify-center pt-10">
-			<Image src={title} alt="Firebomb 2" loading="eager" />
-		</div>
-		<div class="flex flex-col md:flex-row mx-auto py-8">
-			<a href="https://github.com/experimental-celestial-laboratories/firebomb-2/releases/latest" target="_blank" class="px-3 flex justify-center my-3 md:my-0">
-				<Button variant="secondary" className="md:py-10 py-7 bg-[#ff6600]/20 backdrop-blur-xl ring-1 ring-white/20">
-					<p class="md:text-lg">Download Modpack (Prism Launcher)</p>
-				</Button>
-			</a>
-			<a href="https://discord.gg/SNTaaBJrP8" target="_blank" class="px-3 flex justify-center my-3 md:my-0">
-				<Button variant="secondary" className="md:py-10 py-7 bg-[#5865f2]/20 backdrop-blur-xl ring-1 ring-white/20">
-					<Discord size={64} /><p class="md:text-lg">Join our Discord server for support!</p>
-				</Button>
-			</a>
-		</div>
-		<div id="blurb" class="flex justify-center pt-4 pb-20">
-			<Card className="backdrop-blur-xl mx-5 md:w-[60vw]">
-				<CardHeader>
-					<CardTitle>
-						The Pack
-					</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<p>This is Firebomb 2 - our precisely-chosen collection of Minecraft mods that we have assembled to make our dream server. Each mod has been meticulously tested and balanced to a fairly high degree.</p>
-				</CardContent>
-				<CardHeader>
-					<CardTitle>
-						The Server
-					</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<p>Our recommended way to play. Come join us! Server address: <code class="p-1 ring-1 ring-white/10 bg-secondary/90 rounded-sm">fb.hri7566.info:25565</code></p>
-					<p>If you have any issues, please first check you have the latest modpack files, then ask for support in the <a class="text-[#5865f2] hover:text-[#6875ff]" href="https://discord.gg/SNTaaBJrP8">Discord server</a>.</p>
-				</CardContent>
-			</Card>
-		</div>
+	<div class="flex flex-col md:flex-row mx-auto py-8">
+		<a href="https://github.com/experimental-celestial-laboratories/firebomb-2/releases/latest" target="_blank" class="px-3 flex justify-center my-3 md:my-0">
+			<Button variant="secondary" className="cursor-pointer md:py-10 py-7 bg-[#ff6600]/20 backdrop-blur-xl ring-1 ring-white/20">
+				<div class="w-auto">
+					<Prism style={{width: "48px", height: "unset"}} />
+				</div>
+				<p class="md:text-lg">Download Modpack (Prism Launcher)</p>
+			</Button>
+		</a>
+		<a href="https://discord.gg/SNTaaBJrP8" target="_blank" class="px-3 flex justify-center my-3 md:my-0">
+			<Button variant="secondary"  className="cursor-pointer md:py-10 py-7 bg-[#5865f2]/20 backdrop-blur-xl ring-1 ring-white/20">
+				<div class="w-auto">
+					<Discord style={{width: "48px", height: "unset"}} />
+				</div>
+				<p class="md:text-lg">Join our Discord server!</p>
+			</Button>
+		</a>
 	</div>
-	<Footer />
+	<div id="blurb" class="flex justify-center pt-4 pb-20">
+		<Card className="backdrop-blur-xl bg-stone-950/60 mx-5 md:w-[60vw]">
+			<CardHeader>
+				<CardTitle>
+					The Pack
+				</CardTitle>
+			</CardHeader>
+			<CardContent>
+				<p>This is Firebomb 2 - our precisely-chosen collection of Minecraft mods that we have assembled to make our dream server. Each mod has been meticulously tested and balanced to a fairly high degree.</p>
+			</CardContent>
+			<CardHeader>
+				<CardTitle>
+					The Server
+				</CardTitle>
+			</CardHeader>
+			<CardContent>
+				<p>Our recommended way to play. Come join us! Server address: <code class="p-1 ring-1 ring-white/10 bg-secondary/90 rounded-sm">fb.hri7566.info:25565</code></p>
+				<p>If you have any issues, please first check you have the latest modpack files, then ask for support in the <a class="text-[#5865f2] hover:text-[#6875ff]" href="https://discord.gg/SNTaaBJrP8">Discord server</a>.</p>
+			</CardContent>
+		</Card>
+	</div>
 </Layout>
